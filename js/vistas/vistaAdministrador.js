@@ -60,7 +60,6 @@ VistaAdministrador.prototype = {
           "textoRespuesta": $(this).val(),
           "cantidad": 0,
         }
-        console.log($(this).val());
         respuestas.push(respuesta);
       })
       contexto.limpiarFormulario();

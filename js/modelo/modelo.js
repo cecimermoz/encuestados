@@ -12,20 +12,17 @@ var Modelo = function() {
 Modelo.prototype = {
   //se obtiene el id más grande asignado a una pregunta
   obtenerUltimoId: function() {
-    if(this.preguntas.length < 0){
+    if(this.preguntas.length == 0){
       return 0;
     } else {
-      var idAnterior = this.preguntas.id;
-
-
-      // Recorrer el array y chequear que el número de id actual sea menor o mayor que el anterior,
-      // si mayor que el anterior, idAnterior = idActual, else, idAnterior = idAnterior.
-
-
-      for(this.preguntas){
-        idActual = 
-        
+      var idAnterior = this.preguntas[0].id; 
+      for(var i = 0; i<this.preguntas.length;i++){
+        idActual = this.preguntas[i].id;
+        if(idActual >= idAnterior){
+          idAnterior = idActual;
+        }
       }
+      return idAnterior;
     }
   },
 
