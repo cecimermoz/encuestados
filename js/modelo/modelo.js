@@ -8,7 +8,7 @@ var Modelo = function() {
   //inicializacion de eventos
   this.preguntaAgregada = new Evento(this);
   this.preguntaBorrada = new Evento (this);
-  this.borrarTodasPreguntas = new Evento (this);
+  this.borrarTodo = new Evento (this);
 };
 
 Modelo.prototype = {
@@ -43,6 +43,16 @@ Modelo.prototype = {
     this.preguntas = nueva;
     this.guardar();
     this.preguntaBorrada.notificar();
+  },
+
+  borarTodo: function(){
+    var boton = $('#borrarTodo');
+    var miThis = this;
+    boton.click(function(){
+      miThis.preguntas.forEach(element => miThis.preguntas.pop());
+    });
+    this.guardar();
+    this.borrarTodo.notificar();
   },
 
   //se guardan las preguntas
