@@ -1,20 +1,21 @@
 var modelo = new Modelo();
+modelo.recupero();
 var vistaAdmin = new VistaAdministrador(modelo, new Controlador(modelo), {
-  'lista': $('#lista'),
-  'botonEditarPregunta': $('#editarPregunta'),
-  'botonBorrarPregunta': $('#borrarPregunta'),
-  'borrarTodo': $('#borrarTodo'),
-  'pregunta': $('#pregunta'),
-  'respuesta': $('#respuesta'),
-  'formulario': $('localStorageForm'),
-  'botonAgregarPregunta': $('#agregarPregunta'),
-  'muestraDeRespuestas': $('.panel-body')
+    'lista': $('#lista'),
+    'botonEditarPregunta': $('#editarPregunta'),
+    'botonBorrarPregunta': $('#borrarPregunta'),
+    'borrarTodo': $('#borrarTodo'),
+    'pregunta': $('#pregunta'),
+    'respuesta': $('#respuesta'),
+    'formulario': $('localStorageForm'),
+    'botonAgregarPregunta': $('#agregarPregunta'),
+    'muestraDeRespuestas': $('.panel-body')
 });
 vistaAdmin.inicializar();
 var vistaUsuario = new VistaUsuario(modelo, new Controlador(modelo), {
-  'listaPreguntas': $('#preguntas'),
-  'botonAgregar': $('#agregarBoton'),
-  'nombreUsuario' : $('#nombreUsuario'),
-  'graficosDeTorta' : $('#graficosDeTorta'),
+    'listaPreguntas': $('#preguntas'),
+    'botonAgregar': $('#agregarBoton'),
+    'nombreUsuario': $('#nombreUsuario'),
+    'graficosDeTorta': $('#graficosDeTorta'),
 });
 vistaUsuario.inicializar();
